@@ -33,7 +33,7 @@ export const AboutThis = () => {
 
                         <p className="about-text">
                             Por isso, esta wishlist existe: não para celebrar uma data, mas para reunir o que me inspira, o que
-                             combina comigo e o que eu adoraria ter por perto. Um espaço meu — discreto, escuro e cheio das coisas
+                             combina comigo e o que eu adoraria ter por perto. Um espaço meu: discreto, escuro e cheio das coisas
                             que iluminam minha própria escuridão de um jeito suave.
                         </p>
 
