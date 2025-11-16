@@ -24,10 +24,41 @@ Este é um projeto de landing page para uma lista de presentes de aniversário c
 
 ## 📂 Estrutura do Projeto
 
-O projeto está organizado com uma separação clara entre a lógica dos componentes (TSX) e seus estilos (CSS), seguindo a estrutura que você definiu:
+O projeto está organizado com uma separação clara entre a lógica dos componentes (TSX) e seus estilos (CSS), seguindo a estrutura:
 
-/meu-projeto-wishlist │ ├── /public │ └── /assets <-- (Imagens dos livros ficam aqui) │ ├── alice_pesadelo_brinde_ok_2.webp │ └── ... │ ├── /src │ ├── /components <-- (Componentes reutilizáveis) │ │ ├── ImageWithFallback.css │ │ ├── ImageWithFallback.tsx │ │ ├── WishlistCard.css │ │ └── WishlistCard.tsx │ │ │ ├── /global <-- (Componente principal App) │ │ ├── App.css <-- (Estilos de utilidade e classes globais) │ │ └── App.tsx <-- (Montagem das seções e lógica principal) │ │ │ ├── /sections <-- (Arquivos TSX das seções da página) │ │ ├── AboutThis.tsx │ │ ├── Footer.tsx │ │ ├── Hero.tsx │ │ └── TheList.tsx │ │ │ ├── /styles <-- (Arquivos CSS dedicados às seções) │ │ ├── AboutThis.css │ │ ├── Footer.css │ │ ├── Hero.css │ │ └── TheList.css │ │ │ ├── index.css <-- (Fontes globais e variáveis CSS :root) │ └── main.tsx <-- (Ponto de entrada do React) │ └── package.json
-
+/meu-projeto-wishlist
+│
+├── public
+│ └── assets
+│
+├── src
+│ ├── components
+│ │ ├── ImageWithFallback.css
+│ │ ├── ImageWithFallback.tsx
+│ │ ├── WishlistCard.css
+│ │
+│ ├── global
+│ │ ├── App.css
+│ │ └── App.tsx
+│ │
+│ ├── sections
+│ │ ├── AboutThis.tsx
+│ │ ├── Footer.tsx
+│ │ ├── Hero.tsx
+│ │ └── TheList.tsx
+│ │
+│ ├── styles
+│ │ ├── AboutThis.css
+│ │ ├── Footer.css
+│ │ ├── Hero.css
+│ │ ├── TheList.css
+| | ├── WishlistCard.tsx
+│ │ └── WishlistCard.tsx
+| |
+│ ├── index.css <-- fontes globais e variáveis :root
+│ └── main.tsx <-- ponto de entrada do React
+│
+└── package.json
 
 ---
 
