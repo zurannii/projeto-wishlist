@@ -1,0 +1,116 @@
+.hero-section {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-bg-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: screen;
+}
+.hero-bg-smoke {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-size: cover;
+  background-position: center;
+}
+.hero-decorative-statue {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 33.333333%;
+  opacity: 0.2;
+}
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    transparent,
+    rgba(205, 2, 2),
+    var(--background)
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+  max-width: 1152px;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.hero-title {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 1.5rem;
+  font-size: 3.75rem;
+  letter-spacing: 0.2em;
+}
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-style: italic;
+}
+.hero-description {
+  margin: 0 auto 3rem auto;
+  max-width: 42rem;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  line-height: 1.75;
+}
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  border: 1.6px solid #FFF;
+  padding: 1rem 3rem;
+  letter-spacing: 0.3em;
+  transition: all 0.5s;
+  background: none;
+  color: var(--foreground);
+  cursor: pointer;
+}
+.cta-button:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(122, 14, 42, 0.4);
+}
+.cta-button-text {
+  position: relative;
+  z-index: 10;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  transition: color 0.5s;
+}
+.cta-button-hover-bg {
+  position: absolute;
+  inset: 0;
+  transform: translateY(101%);
+  background-color: var(--accent);
+  transition: transform 0.5s;
+}
+.cta-button:hover .cta-button-hover-bg {
+  transform: translateY(0);
+}
+.corner-frame {
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  border-color: var(--border);
+}
+.top-left { left: 2rem; top: 2rem; border-left: 2px solid; border-top: 2px solid; }
+.top-right { right: 2rem; top: 2rem; border-right: 2px solid; border-top: 2px solid; }
+.bottom-left { left: 2rem; bottom: 2rem; border-left: 2px solid; border-bottom: 2px solid; }
+.bottom-right { right: 2rem; bottom: 2rem; border-right: 2px solid; border-bottom: 2px solid; }
+
+@media (min-width: 768px) {
+  .hero-title { font-size: 6rem; }
+  .hero-subtitle { font-size: 4.5rem; }
+}

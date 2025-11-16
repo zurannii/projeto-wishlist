@@ -1,0 +1,17 @@
+.footer {
+  border-top: 1px solid var(--border);
+  background-color: var(--background);
+  padding: 3rem 0;
+}
+.footer-quote {
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+.footer-copyright {
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  color: var(--muted-foreground);
+  margin: 0;
+}
