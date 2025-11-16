@@ -22,46 +22,6 @@ Este é um projeto de landing page para uma lista de presentes de aniversário c
 
 ---
 
-## 📂 Estrutura do Projeto
-
-O projeto está organizado com uma separação clara entre a lógica dos componentes (TSX) e seus estilos (CSS), seguindo a estrutura:
-
-/meu-projeto-wishlist
-│
-├── public
-│ └── assets
-│
-├── src
-│ ├── components
-│ │ ├── ImageWithFallback.css
-│ │ ├── ImageWithFallback.tsx
-│ │ ├── WishlistCard.css
-│ │
-│ ├── global
-│ │ ├── App.css
-│ │ └── App.tsx
-│ │
-│ ├── sections
-│ │ ├── AboutThis.tsx
-│ │ ├── Footer.tsx
-│ │ ├── Hero.tsx
-│ │ └── TheList.tsx
-│ │
-│ ├── styles
-│ │ ├── AboutThis.css
-│ │ ├── Footer.css
-│ │ ├── Hero.css
-│ │ ├── TheList.css
-| | ├── WishlistCard.tsx
-│ │ └── WishlistCard.tsx
-| |
-│ ├── index.css <-- fontes globais e variáveis :root
-│ └── main.tsx <-- ponto de entrada do React
-│
-└── package.json
-
----
-
 ## 🚀 Como Executar
 
 Para rodar este projeto localmente, siga os passos abaixo:
