@@ -3,6 +3,7 @@ import { supabase } from '../lib/supabase';
 import { Hero } from '../sections/Hero';
 import { AboutThis } from '../sections/AboutThis';
 import { TheList } from '../sections/TheList';
+import { ConfirmationModal } from '../sections/ConfirmationModal';
 import { OneMinute } from '../sections/OneMinute';
 import { Footer } from '../sections/Footer';
 import "./App.css";
@@ -146,6 +147,9 @@ export default function App() {
   const wishlistRef = useRef<HTMLDivElement>(null);
   const [purchasedIds, setPurchasedIds] = useState<number[]>([]);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [itemToBuy, setItemToBuy] = useState<number | null>(null)
+
   useEffect(() => {
     async function fetchPurchasedItems() {
       const { data } = await supabase
@@ -161,14 +165,24 @@ export default function App() {
     fetchPurchasedItems();
   }, []);
 
-  async function handleMarkAsPurchased(id: number) {
+  function requestPurchase(id: number) {
+    setItemToBuy(id);
+    setIsModalOpen(true); 
+  }
+
+
+  async function confirmPurchase() {
+    if (itemToBuy === null) return;
+
     const { error } = await supabase
       .from('items_status')
       .update({ purchased: true })
-      .eq('item_id', id);
+      .eq('item_id', itemToBuy);
 
     if (!error) {
-      setPurchasedIds(prev => [...prev, id]);
+      setPurchasedIds(prev => [...prev, itemToBuy]);
+      setIsModalOpen(false); 
+      setItemToBuy(null);   
     } else {
       alert("Erro ao salvar. Tente novamente.");
     }
@@ -189,11 +203,17 @@ export default function App() {
         socks={socksItems}
         misc={miscItems}
         purchasedIds={purchasedIds}
-        onMarkAsPurchased={handleMarkAsPurchased}
+        onMarkAsPurchased={requestPurchase} 
       />
       
       <OneMinute />
       <Footer />
+
+      <ConfirmationModal 
+        isOpen={isModalOpen}
+        onConfirm={confirmPurchase}
+        onCancel={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

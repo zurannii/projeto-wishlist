@@ -1,78 +1,45 @@
 # 🦇 Gothic Birthday Wishlist
 
-Uma landing page de lista de presentes com estética gótica e sombria, desenvolvida para celebrar um aniversário de forma única. O projeto combina design imersivo com funcionalidades de lista de desejos interativa em tempo real.
-
-![Project Preview](public/assets/preview.png)
-*(Dica: Tire um print da tela inicial do seu site e salve como `preview.png` na pasta public/assets para aparecer aqui)*
+Uma experiência digital imersiva criada para celebrar o meu aniversário. Este projeto vai além de uma lista de presentes comum, funcionando como uma aplicação interativa com controle de estoque em tempo real e uma "cápsula do tempo" para mensagens de áudio.
 
 ## ✨ Funcionalidades
 
-- **Estética Dark/Gótica:** Design inspirado na DarkSide Books, com texturas de fumaça, tipografia clássica (*Cinzel* e *Cormorant Garamond*) e detalhes em vermelho sangue (`#7A0E2A`).
-- **Wishlist Interativa:**
-  - Listagem de itens categorizados (Livros, Meias, Diversos).
-  - **Integração com Supabase:** Controle de status em tempo real. Quando alguém marca "Já comprei!", o item é atualizado no banco de dados e fica indisponível (cinza/apagado) para outros visitantes instantaneamente.
-- **Integração com WhatsApp:**
-  - Botão nos cards para avisar sobre a compra do presente ("Oii! Acabei de comprar...").
-  - Seção especial **"Um Minuto do Seu Tempo"** para envio de áudios de carinho.
-- **Responsividade:** Layout totalmente adaptado ("Mobile First") para celulares, tablets e desktops.
-- **Arquitetura Limpa:** Código organizado em seções e componentes reutilizáveis com CSS modular.
+### 🎁 Wishlist Inteligente
+- **Categorias:** Itens organizados em Livros, Meias de Conforto e Diversos.
+- **Status em Tempo Real (Supabase DB):**
+  - Visitantes podem marcar itens como "Já comprei!".
+  - O item é atualizado instantaneamente no banco de dados.
+  - Visualmente, o item fica "apagado" (grayscale) e indisponível para evitar presentes duplicados.
 
-## 🛠️ Tecnologias Utilizadas
+### 🎙️ Cápsula do Tempo (Áudio)
+- **Gravação no Navegador:** Utiliza a API de mídia do navegador para gravar áudios diretamente no site.
+- **Upload Seguro (Supabase Storage):**
+  - Os áudios são enviados para um *Bucket* privado na nuvem.
+  - Visitantes têm permissão apenas para gravar (upload).
+  - Apenas a aniversariante (via painel administrativo) pode ouvir os áudios, garantindo a surpresa para o dia.
 
-- **Frontend:** React, TypeScript, Vite.
-- **Estilização:** CSS Puro (CSS Modules/Scoped) com Variáveis CSS (`:root`).
-- **Backend/Database:** Supabase (PostgreSQL) para persistência dos dados.
-- **Deploy:** Vercel.
+### 🎨 Design & UX
+- **Estética Dark:** Inspirada na identidade visual da Dark.
+- **CSS Puro:** Sem frameworks pesados. Uso de Variáveis CSS, Flexbox, Grid e Media Queries manuais.
+- **Responsividade:** Mobile-first, adaptando fontes, grids e molduras para qualquer tamanho de tela.
 
-## 📂 Estrutura do Projeto
+## 🛠️ Tecnologias
 
-```bash
-/src
-├── /components            
-│   ├── WishlistCard.tsx    
-│   ├── ImageWithFallback.tsx
-│   └── ...
-├── /global                
-│   ├── App.tsx             
-│   ├── App.css           
-│   └── ...
-├── /lib                    
-│   └── supabase.ts         
-├── /sections             
-│   ├── Hero.tsx            
-│   ├── AboutThis.tsx      
-│   ├── TheList.tsx         
-│   ├── OneMinute.tsx       
-│   └── Footer.tsx         
-└── /styles               
-    ├── Hero.css
-    ├── TheList.css
-    └── ...
+- **Frontend:** React 18, TypeScript, Vite.
+- **Estilização:** CSS Modules (Arquivos dedicados por seção).
+- **Backend as a Service:** Supabase.
+  - **Database:** PostgreSQL (Tabela `items_status`).
+  - **Storage:** Gerenciamento de arquivos de áudio (`capsula_audios`).
+- **Libs:** `react-media-recorder`, `@supabase/supabase-js`.
 
 
-* **React**
-* **TypeScript**
-* **Vite** (como ambiente de desenvolvimento)
-* **CSS Puro** (com Variáveis CSS)
-
----
-
-<<<<<<< HEAD
-## 📂 Estrutura do Projeto
-
-O projeto está organizado com uma separação clara entre a lógica dos componentes (TSX) e seus estilos (CSS).
-
----
-
-=======
->>>>>>> 5542b59dfd36b4faa5827b4e540e5f54a92120e9
 ## 🚀 Como Executar
 
 Para rodar este projeto localmente, siga os passos abaixo:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/zurannii/projeto-wishlist)
+    git clone (https://github.com/zurannii/projeto-wishlist)
     ```
 
 2.  **Navegue até a pasta do projeto:**

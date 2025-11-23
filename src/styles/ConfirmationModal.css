@@ -1,0 +1,117 @@
+/* Fundo escuro transparente */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-container {
+  background-color: #050505;
+  border: 1px solid #7A0E2A;
+  padding: 3rem 2rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 40px rgba(122, 14, 42, 0.3);
+  animation: scaleUp 0.3s ease;
+}
+
+.modal-container::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.modal-icon {
+  color: #7A0E2A;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-title {
+  font-family: 'Cinzel', serif;
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+.modal-message {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.modal-warning {
+  display: block;
+  margin-top: 0.5rem;
+  color: #717182;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.modal-btn {
+  padding: 0.8rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid;
+}
+
+.btn-cancel {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-confirm {
+  background: #7A0E2A;
+  border-color: #7A0E2A;
+  color: #fff;
+}
+
+.btn-confirm:hover {
+  background: #961234;
+  box-shadow: 0 0 15px rgba(122, 14, 42, 0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
