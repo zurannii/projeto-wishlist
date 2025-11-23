@@ -73,7 +73,7 @@ export const OneMinute = () => {
                         <br /><br />
                         Só vou ouvir no <strong>dia 31 de dezembro</strong>, como quem abre um tesouro guardado com cuidado.
                         <br />
-                        Obrigada por existir aqui, agora, e por tornar este dia menos solitário e muito mais humano.
+                        Obrigada por existir aqui, agora, e por tornar este dia mais significativo.
                     </p>
 
 
@@ -90,7 +90,7 @@ export const OneMinute = () => {
                         {status === "recording" && (
                             <div className="recording-ui">
                                 <div className="pulse-dot"></div>
-                                <p className="recording-text">Gravando... Fale algo bonito!</p>
+                                <p className="recording-text">Gravando... Fale algo e se deixe levar pelas palavras e lembranças!</p>
                                 <button onClick={handleStop} className="whatsapp-button stop-btn">
                                     <span className="button-text">ENVIAR AGORA</span>
                                 </button>
