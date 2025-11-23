@@ -6,16 +6,15 @@ type Props = {
   title: string;
   description: string;
   link: string;
-  isPurchased: boolean; 
+  isPurchased: boolean;
   onMarkAsPurchased: (id: number) => void;
 };
 
 export const WishlistCard = ({ id, image, title, description, link, isPurchased, onMarkAsPurchased }: Props) => {
   
   const handlePurchaseClick = () => {
-    if (window.confirm("Tem certeza que você comprou este item? Isso irá removê-lo da lista para outras pessoas.")) {
-      onMarkAsPurchased(id);
-    }
+
+    onMarkAsPurchased(id);
   };
 
   return (
