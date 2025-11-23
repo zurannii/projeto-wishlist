@@ -22,12 +22,15 @@ Este é um projeto de landing page para uma lista de presentes de aniversário c
 
 ---
 
+<<<<<<< HEAD
 ## 📂 Estrutura do Projeto
 
 O projeto está organizado com uma separação clara entre a lógica dos componentes (TSX) e seus estilos (CSS).
 
 ---
 
+=======
+>>>>>>> 5542b59dfd36b4faa5827b4e540e5f54a92120e9
 ## 🚀 Como Executar
 
 Para rodar este projeto localmente, siga os passos abaixo:
