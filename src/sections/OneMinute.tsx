@@ -27,7 +27,10 @@ export const OneMinute = () => {
                     </p>
 
                     <p className="oneminute-subtext">
-                        Peço que me envie um áudio de apenas <strong>1 minuto</strong> (ou mais, se quiser. Prometo ouvir!).
+                        Se você chegou até aqui, obrigada por compartilhar esse momento comigo.
+                        <br />Obrigada por entender que celebrar, pra mim, é sobre carinho e presença
+                        mesmo que de um jeito simples.
+                        <br /><br />Se possível, peço que me envie um áudio de apenas <strong>1 minuto</strong> (ou mais, se quiser. Prometo ouvir!) no dia 31 de dezembro.
                         <br />
                         Pode ser algo bonito, uma lembrança nossa, um desejo para o futuro ou apenas um carinho.
                         <br />

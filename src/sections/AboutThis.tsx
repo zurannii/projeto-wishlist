@@ -32,7 +32,11 @@ export const AboutThis = () => {
                         <p className='about-text'>
                             Eu nunca consigo ficar 100% feliz nesse dia.
                             <br />É como se ele trouxesse à tona uma parte minha que carrega… não sei… um sentimento pesado, quase como se eu tivesse alguma maldição que me acompanha.
-                            E isso me faz perder um pouco do encanto.
+                            <br />Isso me faz perder um pouco do encanto.
+                            <br />Com o tempo, acabei me afastando da ideia de festa, de comemoração,
+                            de tudo que envolvesse o meu próprio aniversário, mas não porque eu não quisesse celebrar a vida,
+                            e sim porque esse dia sempre veio carregado de sentimentos que me deixavam
+                            um pouco triste, um pouco perdida, um pouco receosa.
                         </p>
 
                         <p className="about-text">
@@ -53,7 +57,7 @@ export const AboutThis = () => {
 
                         <p className="about-text">
                             Cada item aqui é um gesto de afeto.
-                            <br />Se você quiser participar disso… obrigada. De verdade.
+                            <br />E eu agradeço imensamente se você quiser participar disso.
                         </p>
 
 
