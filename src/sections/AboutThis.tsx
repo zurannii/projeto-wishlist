@@ -51,8 +51,8 @@ export const AboutThis = () => {
 
                         <p className="about-text">
                             Por isso, esta wishlist não é sobre presentes.
-                            <br />É sobre carinho, presença e significado — sobre tornar esse dia um pouco mais meu,
-                            mais doce e menos solitário.
+                            <br />É sobre carinho, presença e significado. É sobre tornar esse dia um pouco mais meu,
+                            mais doce.
                         </p>
 
                         <p className="about-text">
