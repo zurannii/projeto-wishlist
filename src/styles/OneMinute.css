@@ -1,3 +1,6 @@
+/* src/styles/OneMinute.css */
+
+/* --- Classes utilitárias --- */
 .text-center { text-align: center; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-12 { margin-bottom: 3rem; }
@@ -22,9 +25,10 @@
 .line-right-alt { width: 8rem; background-image: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.15)); }
 .diamond-text { color: #7A0E2A; }
 
+/* --- SEÇÃO --- */
 .oneminute-section {
   position: relative;
-  background-color: #050505; 
+  background-color: #050505;
   padding: 6rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -37,32 +41,36 @@
   flex-direction: column;
   gap: 2rem;
   padding: 0 1.5rem;
+  align-items: center;
 }
 
-.oneminute-text {
+.oneminute-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
   font-style: italic;
   color: #fff;
-  line-height: 1.6;
+  line-height: 1;
 }
 
-.oneminute-subtext {
-  font-family: 'Inter', sans-serif; 
+.oneminute-text {
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  color: #717182;
-  line-height: 1.8;
-  letter-spacing: 0.05em;
+  color: #afafbc;
+  margin-top: 0;
+  line-height: 1.7;
 }
 
-.oneminute-subtext strong {
-  color: #7A0E2A;
-  font-weight: 600;
+.oneminute-text strong {
+  color: #ad103a; 
+  font-weight: 700;
 }
 
-.oneminute-action {
-  margin-top: 1rem;
+.recorder-container {
+  margin-top: 2rem;
+  min-height: 100px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -78,31 +86,13 @@
   background: rgba(122, 14, 42, 0.1);
   transition: all 0.5s;
   cursor: pointer;
+  color: white;
+  font-family: 'Cinzel', serif;
 }
 
 .whatsapp-button:hover {
   background: rgba(122, 14, 42, 0.2);
   box-shadow: 0 0 20px rgba(122, 14, 42, 0.3);
-  transform: translateY(-2px);
-}
-
-.whatsapp-icon {
-  font-size: 1.5rem;
-  filter: grayscale(100%);
-  transition: filter 0.3s;
-}
-
-.whatsapp-button:hover .whatsapp-icon {
-  filter: grayscale(0%);
-}
-
-.button-text {
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #fff;
-  z-index: 10;
 }
 
 .button-hover-bg {
@@ -114,7 +104,55 @@
   z-index: 0;
   opacity: 0.2;
 }
+.whatsapp-button:hover .button-hover-bg { width: 100%; }
 
-.whatsapp-button:hover .button-hover-bg {
-  width: 100%;
+.button-text { position: relative; z-index: 10; text-transform: uppercase; letter-spacing: 0.2em;}
+.whatsapp-icon { font-size: 1.5rem; z-index: 10;}
+
+.recording-ui {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.recording-text {
+  color: #ff4444;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  animation: pulse-text 1.5s infinite;
+}
+
+.stop-btn {
+  border-color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+.stop-btn:hover {
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.pulse-dot {
+  width: 15px;
+  height: 15px;
+  background-color: #ff4444;
+  border-radius: 50%;
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7); }
+  70% { transform: scale(1.2); opacity: 0.5; box-shadow: 0 0 0 10px rgba(255, 68, 68, 0); }
+  100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 68, 68, 0); }
+}
+
+.reset-link {
+  background: none;
+  border: none;
+  color: #717182;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-family: 'Inter', sans-serif;
 }

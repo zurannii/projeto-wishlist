@@ -73,11 +73,12 @@
   align-items: center;
   gap: 1rem;
   padding-top: 1rem;
+  color: #cd0339;
 }
 .date-stamp {
   font-size: 1.25rem;
   letter-spacing: 0.1em;
-  color: #840225; 
+  color: #cd0339; 
 }
 .about-image-column { position: relative; }
 .about-image-wrapper {

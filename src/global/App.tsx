@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { supabase } from '../lib/supabase';
 import { Hero } from '../sections/Hero';
 import { AboutThis } from '../sections/AboutThis';
 import { TheList } from '../sections/TheList';
@@ -32,7 +33,7 @@ const bookItems = [
     id: 4, 
     image: "/assets/grimorio-das-bruxas-2.png", 
     title: "Grimório das Bruxas", 
-    description: "Basicamente meu manual de instruções. Não mexa ou posso te transformar num sapinho!", 
+    description: "Basicamente meu manual de instruções. Não mexa ou posso te transformar num sapo.", 
     link: "https://www.darksidebooks.com.br/grimorio-das-bruxas-moon-edition--brinde-exclusivo/p" 
   },
   { 
@@ -46,7 +47,7 @@ const bookItems = [
     id: 6, 
     image: "/assets/pacto_de_sangue_loja_4.png", 
     title: "Carmilla: Pacto de Sangue", 
-    description: "Vampiras góticas antes de Drácula ser modinha. Respeita a matriarca, caramba!", 
+    description: "Vampiras góticas antes de Drácula ser modinha. Respeita a matriarca.", 
     link: "https://www.amazon.com.br/Pacto-Sangue-S-T-Gibson/dp/6555983337/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1Y5MFXGWKSQ7J&dib=eyJ2IjoiMSJ9.N92tzZhRQC5Px6bi-LdC-qHdn59LmTk7wyLCbuBZ85opQc-s4CJTF8npvEY8bKCySL-SuUdZPVzkf3EMZRgCVcZvsr4OU1ca1JrF1q6MBDbz0mGYYRSogpJTUSrKqsLvET6S3iBjfQOFAF8Y2yhpYyF74RT3J5bG69o6p-XxXquGR2io606YNJ2YtwskAKramp3GOjjfux572Uw_z9KJKVwqvtQT2v4bc1ITO42jL50.Jk1LjBUeXjCPgbv-QROPaHUE-JSQN6JL4DKJI7-AeUs&dib_tag=se&keywords=Pacto+de+Sangue&qid=1763253523&s=books&sprefix=carmilla+pacto+de+sangue%2Cstripbooks%2C518&sr=1-1" 
   },
   { 
@@ -91,7 +92,7 @@ const socksItems = [
     id: 103,
     image: "/assets/meia-patrick.webp",
     title: "Meia Patrick Estrela",
-    description: "Pra usar nos dias em que meu cérebro simplesmente desconecta do Wi-Fi, abre um sorriso e fala: 'pera... quê?'",
+    description: "Eu: *tentando ser séria e misteriosa*. Meus pés: 'AQUI É O PATRICK!'",
     link: "https://www.lojasrenner.com.br/p/meia-cano-longo-em-algodao-patrick/-/A-550198912-br.lr?sku=550198921"
   },
   {
@@ -105,14 +106,14 @@ const socksItems = [
     id: 105,
     image: "/assets/scooby-doo.webp",
     title: "Meia Scooby Doo",
-    description: "A meia perfeita para investigar mistérios (ou só investigar as fofocas por aí).",
+    description: "A meia perfeita para investigar mistérios (ou só investigar a geladeira de madrugada).",
     link: "https://www.lojasrenner.com.br/p/meia-em-algodao-com-cano-alto-e-estampa-scooby-doo/-/A-928603909-br.lr?sku=928603917"
   },
   {
     id: 106,
     image: "/assets/lindinha.webp",
     title: "Meia Lindinha",
-    description: "A parte doce e gentil da minha personalidade",
+    description: "Açúcar, tempero e tudo que há de bom, representado pela Lindinha.",
     link: "https://www.lojasrenner.com.br/p/meia-cano-alto-em-algodao-com-estampa-lindinha/-/A-929047908-br.lr?sku=929047916"
   },
 ];
@@ -122,27 +123,56 @@ const miscItems = [
     id: 201,
     image: "/assets/galaxy.webp",
     title: "Luminária Globo Galáxia",
-    description: "Um pequeno universo particular para quando a realidade deste mundo se tornar insuportável.",
+    description: "Para segurar o universo na palma da mão. Um lembrete diário de que somos poeira de estrelas.",
     link: "https://shopee.com.br/Lumin%C3%A1ria-Decorativa-Globo-LED-Lua-Gal%C3%A1xia-Sistema-Solar-Astronauta-Bola-De-Cristal-i.1107305320.23594184455?extraParams=%7B%22display_model_id%22%3A229424217285%2C%22model_selection_logic%22%3A3%7D&xptdk=25c08a7a-8b05-4f93-af3f-125ef2663a90"
   },
   {
     id: 202,
     image: "/assets/saturno-led.webp",
-    title: "Luminária de Saturno",
-    description: "Ter o meu planeta favorito brilhando no escuro traz a paz cósmica é tudo que eu preciso.",
+    title: "Luminária Saturno RGB",
+    description: "O Senhor dos Anéis celestiais. A silhueta mais majestosa do cosmos iluminando meu quarto com a imponência do meu planeta favorito.",
     link: "https://shopee.com.br/Lumin%C3%A1ria-Abajur-3d-Touch-Rgb-16cm-Rgb-Planeta-Saturno-i.293490585.23596282928?extraParams=%7B%22display_model_id%22%3A219163979253%2C%22model_selection_logic%22%3A3%7D&sp_atk=fdae2bd2-5551-4cba-bd91-830f30eca26b&xptdk=fdae2bd2-5551-4cba-bd91-830f30eca26b"
   },
   {
     id: 203,
     image: "/assets/morceguinho.webp",
     title: "Pelúcia de Morcego Fofo",
-    description: "Olha essa carinha. Olha essas asinhas. É minha necessidade emocional número 1.",
+    description: "O guardião da noite. Enquanto admiro meus planetas, ele cuida das sombras. Essencial para a atmosfera.",
     link: "https://shopee.com.br/JAMXUN-Brinquedo-de-Pel%C3%BAcia-de-Morcego-Fofo-de-45cm-Brinquedo-de-Pel%C3%BAcia-de-Coelho-Voador-Cauda-Longa-Boneca-Rosa-e-Pr-i.1594303396.57950245227?extraParams=%7B%22display_model_id%22%3A435021563598%2C%22model_selection_logic%22%3A3%7D&sp_atk=80e332af-ce86-4e6f-8d65-49523fb1d4cb&xptdk=80e332af-ce86-4e6f-8d65-49523fb1d4cb"
   }
 ];
 
 export default function App() {
   const wishlistRef = useRef<HTMLDivElement>(null);
+  const [purchasedIds, setPurchasedIds] = useState<number[]>([]);
+
+  useEffect(() => {
+    async function fetchPurchasedItems() {
+      const { data } = await supabase
+        .from('items_status')
+        .select('item_id')
+        .eq('purchased', true);
+
+      if (data) {
+        setPurchasedIds(data.map(item => item.item_id));
+      }
+    }
+
+    fetchPurchasedItems();
+  }, []);
+
+  async function handleMarkAsPurchased(id: number) {
+    const { error } = await supabase
+      .from('items_status')
+      .update({ purchased: true })
+      .eq('item_id', id);
+
+    if (!error) {
+      setPurchasedIds(prev => [...prev, id]);
+    } else {
+      alert("Erro ao salvar. Tente novamente.");
+    }
+  }
 
   const scrollToWishlist = () => {
     wishlistRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -158,6 +188,8 @@ export default function App() {
         books={bookItems} 
         socks={socksItems}
         misc={miscItems}
+        purchasedIds={purchasedIds}
+        onMarkAsPurchased={handleMarkAsPurchased}
       />
       
       <OneMinute />

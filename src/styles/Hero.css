@@ -94,9 +94,9 @@
 .hero-description {
   margin: 0 auto 2.5rem auto;
   max-width: 42rem;
-  font-size: 1rem; 
+  font-size: 2rem; 
   letter-spacing: 0.05em;
-  color: #717182;
+  color: #ccccd9;
   line-height: 1.6;
   padding: 0 1rem; 
 }

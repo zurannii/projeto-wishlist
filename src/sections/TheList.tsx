@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import  WishlistCard  from "../components/WishlistCard"; 
+import { WishlistCard } from "../components/WishlistCard";
 import "../styles/TheList.css";
 
 type WishlistItem = {
@@ -14,10 +14,12 @@ type TheListProps = {
   books: WishlistItem[];
   socks: WishlistItem[];
   misc: WishlistItem[];
+  purchasedIds: number[]; 
+  onMarkAsPurchased: (id: number) => void; 
 };
 
 export const TheList = forwardRef<HTMLDivElement, TheListProps>(
-  ({ books, socks, misc }, ref) => {
+  ({ books, socks, misc, purchasedIds, onMarkAsPurchased }, ref) => {
     
     const renderSection = (title: string, items: WishlistItem[]) => {
       if (!items || items.length === 0) return null;
@@ -37,10 +39,14 @@ export const TheList = forwardRef<HTMLDivElement, TheListProps>(
             {items.map((item) => (
               <WishlistCard
                 key={item.id}
+                id={item.id}
                 image={item.image}
                 title={item.title}
                 description={item.description}
                 link={item.link}
+                // Passando os dados para o card
+                isPurchased={purchasedIds.includes(item.id)}
+                onMarkAsPurchased={onMarkAsPurchased}
               />
             ))}
           </div>
@@ -58,7 +64,7 @@ export const TheList = forwardRef<HTMLDivElement, TheListProps>(
           </div>
 
           {renderSection("Livros", books)}
-          {renderSection("Meias de Conforto", socks)}
+          {renderSection("Meias & Conforto", socks)}
           {renderSection("Diversos", misc)}
 
           <div className="ornamental-line mt-12">

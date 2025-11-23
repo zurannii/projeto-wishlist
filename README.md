@@ -1,19 +1,54 @@
-# 🦇 Wishlist Sombria (Gothic Wishlist)
+# 🦇 Gothic Birthday Wishlist
 
-Este é um projeto de landing page para uma lista de presentes de aniversário com um tema gótico, sombrio e elegante. A página foi construída com React, TypeScript e CSS puro, demonstrando uma arquitetura de componentes limpa e um design temático forte.
+Uma landing page de lista de presentes com estética gótica e sombria, desenvolvida para celebrar um aniversário de forma única. O projeto combina design imersivo com funcionalidades de lista de desejos interativa em tempo real.
 
+![Project Preview](public/assets/preview.png)
+*(Dica: Tire um print da tela inicial do seu site e salve como `preview.png` na pasta public/assets para aparecer aqui)*
 
-## ✨ Principais Funcionalidades
+## ✨ Funcionalidades
 
-* **Tema Sombrio e Elegante:** Utiliza as fontes "Cinzel" e "Cormorant Garamond", com uma paleta de cores centrada em preto e um vermelho-vinho (`#7A0E2A`) como cor de destaque.
-* **Arquitetura Baseada em Componentes:** O projeto é dividido em seções (`Hero`, `AboutThis`, `TheList`, `Footer`) e componentes reutilizáveis (`WishlistCard`).
-* **Navegação com Scroll Suave:** O botão "Ver Wishlist" na seção Hero rola suavemente para a seção da lista de presentes.
-* **Estilização com CSS Puro:** O projeto foi convertido de Tailwind para CSS puro, utilizando variáveis CSS (`:root`) para uma fácil manutenção do tema.
-* **Carregamento de Imagens Locais:** As imagens da lista de presentes são carregadas a partir da pasta `public/assets`.
+- **Estética Dark/Gótica:** Design inspirado na DarkSide Books, com texturas de fumaça, tipografia clássica (*Cinzel* e *Cormorant Garamond*) e detalhes em vermelho sangue (`#7A0E2A`).
+- **Wishlist Interativa:**
+  - Listagem de itens categorizados (Livros, Meias, Diversos).
+  - **Integração com Supabase:** Controle de status em tempo real. Quando alguém marca "Já comprei!", o item é atualizado no banco de dados e fica indisponível (cinza/apagado) para outros visitantes instantaneamente.
+- **Integração com WhatsApp:**
+  - Botão nos cards para avisar sobre a compra do presente ("Oii! Acabei de comprar...").
+  - Seção especial **"Um Minuto do Seu Tempo"** para envio de áudios de carinho.
+- **Responsividade:** Layout totalmente adaptado ("Mobile First") para celulares, tablets e desktops.
+- **Arquitetura Limpa:** Código organizado em seções e componentes reutilizáveis com CSS modular.
 
----
+## 🛠️ Tecnologias Utilizadas
 
-## 📚 Tecnologias Utilizadas
+- **Frontend:** React, TypeScript, Vite.
+- **Estilização:** CSS Puro (CSS Modules/Scoped) com Variáveis CSS (`:root`).
+- **Backend/Database:** Supabase (PostgreSQL) para persistência dos dados.
+- **Deploy:** Vercel.
+
+## 📂 Estrutura do Projeto
+
+```bash
+/src
+├── /components            
+│   ├── WishlistCard.tsx    
+│   ├── ImageWithFallback.tsx
+│   └── ...
+├── /global                
+│   ├── App.tsx             
+│   ├── App.css           
+│   └── ...
+├── /lib                    
+│   └── supabase.ts         
+├── /sections             
+│   ├── Hero.tsx            
+│   ├── AboutThis.tsx      
+│   ├── TheList.tsx         
+│   ├── OneMinute.tsx       
+│   └── Footer.tsx         
+└── /styles               
+    ├── Hero.css
+    ├── TheList.css
+    └── ...
+
 
 * **React**
 * **TypeScript**
