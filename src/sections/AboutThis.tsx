@@ -25,17 +25,38 @@ export const AboutThis = () => {
                         </div>
 
                         <p className="about-text">
-                            Eu não gosto muito do meu aniversário.
-                            <br />Nunca foi uma data que me deixasse confortável ou animada 
-                            e tudo bem. Mas ainda assim, existem coisas que eu gosto, pequenos desejos que fazem parte do meu
-                            mundo e refletem quem eu sou de verdade.
+                            Meu aniversário sempre foi uma data de sentimentos misturados.
+                            <br />Eu gosto dele… mas ao mesmo tempo parece que sempre falta algo, como se existisse um pedaço invisível que nunca se encaixa.
+                        </p>
+
+                        <p className='about-text'>
+                            Eu nunca consigo ficar 100% feliz nesse dia.
+                            <br />É como se ele trouxesse à tona uma parte minha que carrega… não sei… um sentimento pesado, quase como se eu tivesse alguma maldição que me acompanha.
+                            E isso me faz perder um pouco do encanto.
                         </p>
 
                         <p className="about-text">
-                            Por isso, esta wishlist existe: não para celebrar uma data, mas para reunir o que me inspira, o que
-                             combina comigo e o que eu adoraria ter por perto. Um espaço meu: discreto, escuro e cheio das coisas
-                            que iluminam minha própria escuridão de um jeito suave.
+                            Esperar a meia-noite sempre trouxe um aperto no peito, como se aquele instante
+                            dissesse se eu realmente importo para alguém.
                         </p>
+
+                        <p className="about-text">
+                            E o dia em si quase nunca é leve. É corrido, vazio em alguns momentos, e às vezes
+                            cheio de esquecimentos que apagam um pouco do brilho que eu gostaria que ele tivesse.
+                        </p>
+
+                        <p className="about-text">
+                            Por isso, esta wishlist não é sobre presentes.
+                            <br />É sobre carinho, presença e significado — sobre tornar esse dia um pouco mais meu,
+                            mais doce e menos solitário.
+                        </p>
+
+                        <p className="about-text">
+                            Cada item aqui é um gesto de afeto.
+                            <br />Se você quiser participar disso… obrigada. De verdade.
+                        </p>
+
+
 
 
                         <div className="about-footer-line">
@@ -47,7 +68,7 @@ export const AboutThis = () => {
                     <div className="about-image-column">
                         <div className="about-image-wrapper">
                             <ImageWithFallback
-                                src="https://images.unsplash.com/photo-1730874829217-f7f666e94822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmVlayUyMHN0YXR1ZSUyMG1hc2t8ZW58MXx8fHwxNzYzMjI3MDI1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                                src="/assets/estatua-rob.png"
                                 alt="Decorative element"
                             />
                             <div className="image-vignette-bottom"></div>

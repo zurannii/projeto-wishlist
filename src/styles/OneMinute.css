@@ -1,0 +1,120 @@
+.text-center { text-align: center; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mt-16 { margin-top: 4rem; }
+
+.section-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 2.25rem;
+  letter-spacing: 0.2em;
+  color: #fff;
+}
+
+.ornamental-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.line-item { height: 1px; }
+.line-center { width: 4rem; background-color: #7A0E2A; }
+.line-left-alt { width: 8rem; background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15)); }
+.line-right-alt { width: 8rem; background-image: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.15)); }
+.diamond-text { color: #7A0E2A; }
+
+.oneminute-section {
+  position: relative;
+  background-color: #050505; 
+  padding: 6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.oneminute-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1.5rem;
+}
+
+.oneminute-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.oneminute-subtext {
+  font-family: 'Inter', sans-serif; 
+  font-size: 1rem;
+  color: #717182;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+}
+
+.oneminute-subtext strong {
+  color: #7A0E2A;
+  font-weight: 600;
+}
+
+.oneminute-action {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.whatsapp-button {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  border: 1px solid #7A0E2A;
+  padding: 1rem 3rem;
+  background: rgba(122, 14, 42, 0.1);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.whatsapp-button:hover {
+  background: rgba(122, 14, 42, 0.2);
+  box-shadow: 0 0 20px rgba(122, 14, 42, 0.3);
+  transform: translateY(-2px);
+}
+
+.whatsapp-icon {
+  font-size: 1.5rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.whatsapp-button:hover .whatsapp-icon {
+  filter: grayscale(0%);
+}
+
+.button-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 10;
+}
+
+.button-hover-bg {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background-color: #7A0E2A;
+  transition: width 0.5s ease;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+.whatsapp-button:hover .button-hover-bg {
+  width: 100%;
+}
